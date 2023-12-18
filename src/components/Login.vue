@@ -20,8 +20,8 @@
 export default {
   data() {
     return {
-      identifier: "user@strapi.io",
-      password: "123456",
+      identifier: identifier,
+      password: password,
     };
   },
   methods: {

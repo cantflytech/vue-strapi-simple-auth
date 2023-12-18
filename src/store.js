@@ -34,7 +34,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         commit("auth_request");
         axios({
-          url: "http://localhost:1337/auth/local",
+          url: "http://localhost:1337/api/auth/local",
           data: user,
           method: "POST",
         })
@@ -58,7 +58,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         commit("auth_request");
         axios({
-          url: "http://localhost:1337/auth/local/register",
+          url: "http://localhost:1337/api/auth/local/register",
           data: user,
           method: "POST",
         })
