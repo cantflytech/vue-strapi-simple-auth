@@ -59,7 +59,7 @@ export default {
       let password = this.password;
       this.$store
         .dispatch("login", { identifier, password })
-        .then(() => this.$router.push("/request"))
+        .then(() => this.$router.push("/about"))
         .catch((err) => console.log(err));
     },
   },

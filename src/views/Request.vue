@@ -1,6 +1,7 @@
 <template>
   <div class="container">
       <h1>Votre questionaire</h1>
+
       <!-- Question 1 -->
       <div class="row">
         <div class=" mb-4 rounded-box">
@@ -268,7 +269,7 @@
 <script>
 import axios from 'axios'
 import { mapGetters } from "vuex";
-
+import { mapState, mapActions } from 'vuex';
 export default {
   name: 'request',
   data() {
@@ -285,8 +286,13 @@ export default {
       Q10: 0,
       token: '8ee092f7f3a9e806fe1d580bb0f0e399f475c059e56a63e36db862883349322fd3cc863678f988df8fd3a89daf726c632b14964e87ef90fa76b8bbe32fc72f620336227c4929821d2136286439ddfb2ae883f360563cdf50488d74d8287a51bebeac29bd19c4f4843dc0ff87d613448cc9595c0341e5ceaed67f5d10521f08e3'
     }
+    
+  },
+  computed: {
+    ...mapState(['usedata']),
   },
   methods: {
+
     request() {
       const data = {
       data: {
@@ -302,8 +308,7 @@ export default {
         Q10: this.Q10
       }
     };
-    
-
+    console.log(this.usedata),
     console.log("Data being sent:", JSON.stringify(data, null, 2));
     
     return new Promise((resolve, reject) => {
@@ -323,6 +328,7 @@ export default {
     });
     }
   },
+
 
   
 }

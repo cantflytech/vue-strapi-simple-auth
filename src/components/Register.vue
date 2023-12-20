@@ -60,6 +60,8 @@ import axios from 'axios'
       .then(response => {
         console.log("Response received:", JSON.stringify(response.data, null, 2));
         resolve(response.data);
+        this.$router.push("/request"); 
+
       })
       .catch(error => {
         console.error(error);

@@ -10,6 +10,7 @@ export default new Vuex.Store({
     status: "",
     token: localStorage.getItem("token") || "",
 		userInfo: {},
+    usedata: localStorage.getItem("data"),
   },
   mutations: {
     auth_request(state) {
@@ -19,6 +20,7 @@ export default new Vuex.Store({
       state.status = "success";
       state.token = payload.jwt;
 			state.userInfo = payload.user;
+      state.data = payload.data;
     },
     auth_error(state) {
       state.status = "error";
@@ -27,6 +29,7 @@ export default new Vuex.Store({
       state.status = "";
       state.token = "";
       state.userInfo = "";
+      state.data = "";
     },
   },
   actions: {
@@ -46,6 +49,8 @@ export default new Vuex.Store({
             axios.defaults.headers.common["Authorization"] = token;
             commit("auth_success", data);
             resolve(resp);
+            console.log("Response received:", JSON.stringify(resp.data, null, 2));
+            console.log(localStorage.getItem("data"));
           })
           .catch((err) => {
             commit("auth_error");
