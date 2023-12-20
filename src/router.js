@@ -5,6 +5,8 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Login from './components/Login.vue'
 import Register from './components/Register.vue'
+import Request from './views/Request.vue'
+import Dashboard from './views/Dashboard.vue'
 
 Vue.use(Router)
 
@@ -26,6 +28,18 @@ let router = new Router({
       name: 'register',
       component: Register
     },
+      
+      {
+        path: '/request',
+        name: 'request',
+        component: Request,
+      },
+      {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: Dashboard,
+      },
+
     // {
     //   path: '/secure',
     //   name: 'secure',
@@ -45,7 +59,7 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   if(to.matched.some(record => record.meta.requiresAuth)) {
     if (store.getters.isLoggedIn) {
-      next()
+      next('')
       return
     }
     next('/login') 

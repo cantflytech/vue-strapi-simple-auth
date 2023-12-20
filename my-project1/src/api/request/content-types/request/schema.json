@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "requests",
+  "info": {
+    "singularName": "request",
+    "pluralName": "requests",
+    "displayName": "request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Q1": {
+      "type": "integer"
+    },
+    "Q2": {
+      "type": "boolean"
+    },
+    "Q3": {
+      "type": "integer"
+    },
+    "Q4": {
+      "type": "boolean"
+    },
+    "Q5": {
+      "type": "integer"
+    },
+    "Q6": {
+      "type": "integer"
+    },
+    "Q7": {
+      "type": "boolean"
+    },
+    "Q8": {
+      "type": "integer"
+    },
+    "Q9": {
+      "type": "boolean"
+    },
+    "Q10": {
+      "type": "integer"
+    }
+  }
+}

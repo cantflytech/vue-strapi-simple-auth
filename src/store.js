@@ -63,6 +63,7 @@ export default new Vuex.Store({
           method: "POST",
         })
           .then((resp) => {
+            console.log("Response received:", JSON.stringify(response.data, null, 2));
             const token = resp.data.jwt;
             const user = resp.data.user;
             localStorage.setItem("token", token);
@@ -72,6 +73,7 @@ export default new Vuex.Store({
             resolve(resp);
           })
           .catch((err) => {
+            
             commit("auth_error", err);
             localStorage.removeItem("token");
             reject(err);
